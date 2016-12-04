@@ -1,0 +1,32 @@
+{
+  "name": "uafs-live-updater",
+  "version": "1.0.0",
+  "description": "pulls tweets from twitter for unitedairlines",
+  "main": "app.js",
+  "scripts": {
+    "dev": ". ../scripts/uafs_liveupdater_dev.sh && node app.js",
+    "start": ". ../../scripts/uafs_liveupdater_prod.sh && node app.js",
+    "shell": ". ../scripts/uafs_liveupdater_dev.sh && node",
+    "test": "tape tests/* | tap-sepc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kapadiamush/uafs-live-updater.git"
+  },
+  "keywords": [
+    "united",
+    "airlines",
+    "fucking",
+    "sucks"
+  ],
+  "author": "Mushaheed Kapadia",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kapadiamush/uafs-live-updater/issues"
+  },
+  "homepage": "https://github.com/kapadiamush/uafs-live-updater#readme",
+  "dependencies": {
+    "socket.io": "^1.4.8",
+    "twitter": "^1.2.5"
+  }
+}
