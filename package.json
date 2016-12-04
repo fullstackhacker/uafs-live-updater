@@ -7,6 +7,7 @@
     "dev": ". ../scripts/uafs_liveupdater_dev.sh && node app.js",
     "start": ". ../../scripts/uafs_liveupdater_prod.sh && node app.js",
     "shell": ". ../scripts/uafs_liveupdater_dev.sh && node",
+    "deploy": "ssh uafs < deploy.sh",
     "test": "tape tests/* | tap-sepc"
   },
   "repository": {
