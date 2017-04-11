@@ -35,7 +35,6 @@ const twitterStream = twitter.stream(
             screen_name: tweet.user.screen_name
           }
         };
-        console.log(simplifiedTweet);
         io.emit('tweet', simplifiedTweet)
       }
     );

@@ -19,5 +19,5 @@ fuser -k 2999/tcp
 cd current
 
 echo "Starting app!"
-(npm start&) > /var/log/uafs/uafs_liveupdater.log
+npm start >> /var/log/uafs/uafs_liveupdater.log&
 echo "Done!"
