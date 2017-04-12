@@ -13,7 +13,7 @@ const twitter = new Twitter({
 io.on('connection', function(socket){
   console.log("got a connection!");
 
-  io.once('disconnect', function(){
+  socket.once('disconnect', function(){
     console.log("lost a connection");
   });
 
