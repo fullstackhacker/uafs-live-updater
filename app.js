@@ -12,10 +12,11 @@ const twitter = new Twitter({
 
 io.on('connection', function(socket){
   console.log("got a connection!");
-});
 
-io.on('disconnect', function(){
-  console.log("lost a connection");
+  io.once('disconnect', function(){
+    console.log("lost a connection");
+  });
+
 });
 
 const twitterStream = twitter.stream(
@@ -27,6 +28,10 @@ const twitterStream = twitter.stream(
     twitterStream.on(
       'data',
       function(tweet){
+        if (!tweet.user){ 
+          console.log(tweet);
+          return;
+        }
         const simplifiedTweet = {
           date: tweet.created_at,
           text: tweet.text,
@@ -42,7 +47,7 @@ const twitterStream = twitter.stream(
     twitterStream.on(
       'error',
       function(err){
-        console.log(err);
+        oonsole.log(err);
         console.log(err.message);
       }
     );
